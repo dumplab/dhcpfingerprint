@@ -123,7 +123,6 @@ def procdhcp(pkt):
 					else:
 						opt55 += "," + str(int(byte, 16))
 
-				print("MAC:" + srcMac + " Params:" + str(opt55))
 				os = fpDB.get(opt55,[])
 				if not any(os):
 					result = "none"
