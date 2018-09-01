@@ -1,10 +1,11 @@
 # dhcpfingerprint
-Identifiy Device type, vendor and OS using sniffed DHCP messages. Update NeDi nodes ...
+Identifiy Device type, vendor and OS using sniffed DHCP messages. Update NeDi nodes ... Requires mysqlconnector and scapy.
 
 Can be run as a service using systemctl ... copy script to /opt/scripts/dhcpfingerprint.py
 
 Create a file ... vim /etc/systemd/system/dhcpfingerprint.service
 
+```
 [Unit]
 Description=DHCP Fingerprint for NeDi
 After=syslog.target network.target
@@ -19,6 +20,7 @@ RestartSec=60
 
 [Install]
 WantedBy=multi-user.target
+```
 
 systemctl enable dhcpfingerprint
 systemctl start dhcpfingerprint
